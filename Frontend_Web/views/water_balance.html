@@ -1,0 +1,32 @@
+<div class="sp-card">
+    <div class="sp-card-header">
+        <h3 class="sp-card-title">ข้อมูลสูตรสมดุลน้ำ (Dynamic Calculation)</h3>
+    </div>
+    
+    <div class="grid-4" style="margin-bottom: 24px;">
+        <div class="value-display">
+            <span class="label">ความกว้างบานประตู (จากตั้งค่า)</span>
+            <span class="value">2.5 <span class="unit">ม.</span></span>
+        </div>
+        <div class="value-display">
+            <span class="label">ระดับน้ำ Zero Gauge</span>
+            <span class="value">0.5 <span class="unit">ม.</span></span>
+        </div>
+        <div class="value-display">
+            <span class="label">น้ำคลอง - บ่อ (Head)</span>
+            <span class="value" style="color: var(--color-primary);">0.45 <span class="unit">ม.</span></span>
+        </div>
+        <div class="value-display">
+            <span class="label">สถานะการไหล</span>
+            <span class="value" style="font-size: 24px; margin-top: 8px;">น้ำไหลเข้าบ่อ <i class="fa-solid fa-arrow-right-to-bracket" style="color: var(--color-primary);"></i></span>
+        </div>
+    </div>
+    
+    <div style="background-color: var(--color-canvas-soft); padding: 24px; border-radius: var(--rounded-md); border: 1px solid var(--color-hairline);">
+        <h4 style="margin-bottom: 16px; color: var(--color-ink-secondary);">ปริมาตรน้ำที่ไหลผ่าน (Q)</h4>
+        <div class="value-display">
+            <span class="value" style="font-size: 48px; color: var(--color-primary);">12.54 <span class="unit">ลบ.ม./วินาที (m³/s)</span></span>
+        </div>
+        <p style="margin-top: 16px; font-size: 13px; color: var(--color-ink-mute);"><i class="fa-solid fa-calculator"></i> คำนวณจากสูตร: Q = C * L * H^1.5 (หรือสูตรใต้น้ำตามเงื่อนไขเซ็นเซอร์)</p>
+    </div>
+</div>

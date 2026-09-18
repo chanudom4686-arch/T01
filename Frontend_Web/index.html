@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Station - Universal Dashboard</title>
+    <!-- Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <i class="fa-solid fa-water logo-icon"></i>
+                <span class="logo-text">Smart Station</span>
+            </div>
+            <button class="close-sidebar-btn" onclick="toggleSidebar()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">Main</div>
+            <a href="#/" class="nav-link active" data-path="/"><i class="fa-solid fa-chart-line"></i> ภาพรวม (Overview)</a>
+            <a href="#/weather" class="nav-link" data-path="/weather"><i class="fa-solid fa-cloud-sun-rain"></i> สถานีอากาศ (โหมด 4)</a>
+            <a href="#/river" class="nav-link" data-path="/river"><i class="fa-solid fa-water"></i> ระดับน้ำคลอง (โหมด 1)</a>
+            <a href="#/tap-water" class="nav-link" data-path="/tap-water"><i class="fa-solid fa-faucet-drip"></i> ระดับน้ำประปา (โหมด 2)</a>
+            <a href="#/water-balance" class="nav-link" data-path="/water-balance"><i class="fa-solid fa-scale-balanced"></i> สมดุลน้ำบานประตู</a>
+            
+            <div class="nav-section mt-4">System</div>
+            <a href="#/devices" class="nav-link" data-path="/devices"><i class="fa-solid fa-server"></i> จัดการอุปกรณ์ IoT</a>
+            <a href="#/settings" class="nav-link" data-path="/settings"><i class="fa-solid fa-gear"></i> ตั้งค่าระบบ</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="avatar"><i class="fa-solid fa-user-shield"></i></div>
+                <div class="details">
+                    <span class="name">Administrator</span>
+                    <span class="role">Logged In</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Top Header (Mobile & Desktop) -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="hamburger-btn" onclick="toggleSidebar()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h1 id="page-title" class="page-title">Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="status-indicator online">
+                    <span class="dot"></span> Online
+                </div>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Area -->
+        <main id="app-content" class="content-area">
+            <!-- Content will be injected here by app.js -->
+            <div class="loading-state">
+                <i class="fa-solid fa-spinner fa-spin"></i> Loading...
+            </div>
+        </main>
+    </div>
+
+    <!-- Chart.js for Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- App Logic -->
+    <script src="js/app.js"></script>
+</body>
+</html>
