@@ -189,7 +189,7 @@ function initWaterBalanceChart() {
             labels: ['10:00', '10:05', '10:10', '10:15', '10:20', '10:25'],
             datasets: [
                 {
-                    label: 'ได้น้ำ (m³/วัน)',
+                    label: 'Qin (ได้น้ำ)',
                     data: [1100000, 1100500, 1090000, 1085000, 1083000, 1083120],
                     borderColor: '#0dcaf0',
                     backgroundColor: 'rgba(13, 202, 240, 0.1)',
@@ -198,7 +198,7 @@ function initWaterBalanceChart() {
                     yAxisID: 'y'
                 },
                 {
-                    label: 'เสียน้ำ (m³/วัน)',
+                    label: 'Qout (เสียน้ำ)',
                     data: [180000, 181000, 185000, 182000, 181500, 182280],
                     borderColor: '#ff4d4f',
                     backgroundColor: 'rgba(255, 77, 79, 0.1)',
