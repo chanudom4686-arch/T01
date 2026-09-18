@@ -63,7 +63,8 @@ async function loadRoute() {
     
     try {
         // Fetch HTML Fragment
-        const response = await fetch(`views/${route.file}`);
+        const htmlPath = `views/${route.file}`;
+        const response = await fetch(htmlPath + '?v=' + new Date().getTime());
         if (!response.ok) throw new Error('Network response was not ok');
         const html = await response.text();
         
