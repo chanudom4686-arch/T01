@@ -104,6 +104,8 @@ function initViewLogic(path) {
         initRiverChart();
     } else if (path === '/') {
         initWaterBalanceChart();
+    } else if (path === '/tap-water') {
+        initTapWaterChart();
     }
     // Add other initializers as needed
 }
@@ -231,6 +233,81 @@ function initWaterBalanceChart() {
                     type: 'linear', display: true, position: 'right',
                     title: { display: true, text: 'ปริมาตรสะสม (m³)' },
                     grid: { drawOnChartArea: false }
+                }
+            }
+        }
+    });
+}
+
+function initTapWaterChart() {
+    const ctx = document.getElementById('tapWaterChart');
+    if (!ctx) return;
+    
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00'],
+            datasets: [
+                {
+                    label: 'สถานะปั๊มดิบ (ทำงาน)',
+                    data: [0, 1, 1, 0, 0, 1, 1, 0],
+                    type: 'line',
+                    stepped: true,
+                    fill: true,
+                    backgroundColor: 'rgba(52, 152, 219, 0.15)', // Light Blue Background
+                    borderColor: 'rgba(52, 152, 219, 0)', // Invisible Border
+                    yAxisID: 'y_pump',
+                    pointRadius: 0
+                },
+                {
+                    label: 'สถานะปั๊มดี (ทำงาน)',
+                    data: [1, 0, 0, 1, 1, 0, 0, 1],
+                    type: 'line',
+                    stepped: true,
+                    fill: true,
+                    backgroundColor: 'rgba(62, 207, 142, 0.15)', // Light Green Background
+                    borderColor: 'rgba(62, 207, 142, 0)',
+                    yAxisID: 'y_pump',
+                    pointRadius: 0
+                },
+                {
+                    label: 'ระดับน้ำดิบ (m)',
+                    data: [1.5, 1.8, 2.4, 2.4, 2.2, 1.9, 2.5, 2.4],
+                    borderColor: '#3498db', // Blue line
+                    borderWidth: 2,
+                    tension: 0.3,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'ระดับน้ำดี (m)',
+                    data: [2.0, 1.5, 1.2, 1.6, 2.1, 2.0, 1.4, 1.8],
+                    borderColor: '#3ecf8e', // Green line
+                    borderWidth: 2,
+                    tension: 0.3,
+                    yAxisID: 'y'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                mode: 'index',
+                intersect: false,
+            },
+            plugins: {
+                legend: { position: 'top' }
+            },
+            scales: {
+                x: { grid: { display: false } },
+                y: { 
+                    type: 'linear', display: true, position: 'left',
+                    title: { display: true, text: 'ระดับน้ำ (ม.)' },
+                    min: 0, max: 3
+                },
+                y_pump: {
+                    type: 'linear', display: false, position: 'right', // Hide this axis visually
+                    min: 0, max: 1
                 }
             }
         }
