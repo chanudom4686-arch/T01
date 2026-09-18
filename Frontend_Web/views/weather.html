@@ -25,19 +25,48 @@
             
             <div class="sp-card">
                 <div class="value-display">
-                    <span class="label"><i class="fa-solid fa-cloud-showers-heavy"></i> ปริมาณน้ำฝน</span>
-                    <span class="value">0.0 <span class="unit">mm</span></span>
+                    <span class="label"><i class="fa-regular fa-sun"></i> ความสว่าง (แสง)</span>
+                    <span class="value">4500 <span class="unit">Lux</span></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sp-card" style="border: 2px solid var(--color-primary); background-color: rgba(62, 207, 142, 0.05);">
+            <div class="sp-card-header" style="margin-bottom: 8px;">
+                <h3 class="sp-card-title"><i class="fa-solid fa-leaf"></i> อัตราการระเหยคายน้ำ (ET)</h3>
+                <p style="font-size: 12px; color: var(--color-ink-mute);">คำนวณด้วยสมการ Penman-Monteith (FAO-56)</p>
+            </div>
+            <div class="value-display">
+                <span class="value" style="color: var(--color-primary);">4.2 <span class="unit">mm/day</span></span>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="sp-card">
+                <div class="value-display">
+                    <span class="label"><i class="fa-solid fa-cloud-showers-heavy"></i> ฝนสะสม (รายชั่วโมง)</span>
+                    <span class="value">2.4 <span class="unit">mm</span></span>
+                </div>
+            </div>
+            <div class="sp-card">
+                <div class="value-display">
+                    <span class="label"><i class="fa-solid fa-cloud-showers-water"></i> ฝนสะสม (รายวัน)</span>
+                    <span class="value">15.6 <span class="unit">mm</span></span>
                 </div>
             </div>
         </div>
         
         <div class="sp-card" style="margin-top: 24px; background-color: var(--color-canvas-night); color: var(--color-on-dark);">
             <div class="sp-card-header">
-                <h3 class="sp-card-title" style="color: var(--color-on-dark);">ควบคุมอุปกรณ์ (Relays)</h3>
+                <h3 class="sp-card-title" style="color: var(--color-on-dark);">ควบคุมอุปกรณ์แยก (Relays)</h3>
             </div>
             <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <button class="btn btn-primary" style="flex: 1;"><i class="fa-solid fa-power-off"></i> เปิดพัดลมระบายอากาศ</button>
-                <button class="btn btn-outline" style="flex: 1; border-color: #555; color: #fff;"><i class="fa-solid fa-power-off"></i> ปิดพัดลม</button>
+                <button class="btn btn-primary" style="flex: 1;"><i class="fa-solid fa-power-off"></i> เปิด CH1</button>
+                <button class="btn btn-outline" style="flex: 1; border-color: #555; color: #fff;"><i class="fa-solid fa-power-off"></i> ปิด CH1</button>
+            </div>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px;">
+                <button class="btn btn-primary" style="flex: 1;"><i class="fa-solid fa-power-off"></i> เปิด CH2</button>
+                <button class="btn btn-outline" style="flex: 1; border-color: #555; color: #fff;"><i class="fa-solid fa-power-off"></i> ปิด CH2</button>
             </div>
         </div>
     </div>
@@ -45,7 +74,7 @@
     <!-- Right Column: Graph -->
     <div class="sp-card" style="display: flex; flex-direction: column;">
         <div class="sp-card-header">
-            <h3 class="sp-card-title">กราฟอุณหภูมิ 1 ชั่วโมงล่าสุด</h3>
+            <h3 class="sp-card-title">กราฟข้อมูลสถานีอากาศ</h3>
         </div>
         <div style="flex: 1; min-height: 300px; position: relative;">
             <!-- Chart.js Canvas -->

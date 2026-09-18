@@ -1,38 +1,61 @@
 <div class="grid-2">
+    <!-- Left Column: Raw & Clean Water Levels -->
     <div>
-        <div class="grid-2">
-            <div class="sp-card">
-                <div class="value-display">
-                    <span class="label">ระดับน้ำดิบ</span>
-                    <span class="value">2.40 <span class="unit">ม.</span></span>
-                </div>
+        <div class="sp-card" style="border-top: 4px solid #3498db;">
+            <div class="sp-card-header">
+                <h3 class="sp-card-title">1. สถานีวัดระดับน้ำดิบ (เข้า)</h3>
             </div>
-            
-            <div class="sp-card">
-                <div class="value-display">
-                    <span class="label">ระดับน้ำดี</span>
-                    <span class="value">1.80 <span class="unit">ม.</span></span>
-                </div>
+            <div class="value-display">
+                <span class="value">2.40 <span class="unit">ม.</span></span>
+                <span class="label" style="margin-top: 8px;">จากเซ็นเซอร์ US-100 Ultrasonic</span>
             </div>
         </div>
         
-        <div class="sp-card" style="background-color: var(--color-canvas-night); color: var(--color-on-dark);">
+        <div class="sp-card" style="border-top: 4px solid var(--color-primary);">
             <div class="sp-card-header">
-                <h3 class="sp-card-title" style="color: var(--color-on-dark);">ควบคุมปั๊มน้ำดิบเข้าถัง</h3>
+                <h3 class="sp-card-title">3. สถานีวัดระดับน้ำดี (ในอาคาร)</h3>
             </div>
-            <div style="display: flex; gap: 12px;">
-                <button class="btn btn-primary" style="flex: 1;"><i class="fa-solid fa-power-off"></i> เปิด</button>
-                <button class="btn btn-outline" style="flex: 1; border-color: #555; color: #fff;"><i class="fa-solid fa-power-off"></i> ปิด</button>
+            <div class="value-display">
+                <span class="value">1.80 <span class="unit">ม.</span></span>
+                <span class="label" style="margin-top: 8px;">จากเซ็นเซอร์ US-100 Ultrasonic</span>
             </div>
         </div>
     </div>
 
-    <div class="sp-card" style="display: flex; flex-direction: column;">
-        <div class="sp-card-header">
-            <h3 class="sp-card-title">กราฟระดับน้ำประปา</h3>
+    <!-- Right Column: Pump Statuses -->
+    <div>
+        <div class="sp-card" style="background-color: var(--color-canvas-soft);">
+            <div class="sp-card-header">
+                <h3 class="sp-card-title">2. สถานีเช็คปั๊มน้ำขาเข้า (2 ตัว)</h3>
+                <p style="font-size: 12px; color: var(--color-ink-mute);">ตรวจจับไฟด้วย AC 220V Optocoupler</p>
+            </div>
+            <div class="grid-2">
+                <div style="padding: 16px; background: var(--color-canvas); border-radius: var(--rounded-sm); border: 1px solid var(--color-hairline); text-align: center;">
+                    <h4 style="font-size: 14px; margin-bottom: 8px;">ปั๊มน้ำดิบตัวที่ 1</h4>
+                    <span style="color: var(--color-primary); font-weight: 600;"><i class="fa-solid fa-bolt"></i> ทำงานอยู่ (ON)</span>
+                </div>
+                <div style="padding: 16px; background: var(--color-canvas); border-radius: var(--rounded-sm); border: 1px solid var(--color-hairline); text-align: center;">
+                    <h4 style="font-size: 14px; margin-bottom: 8px;">ปั๊มน้ำดิบตัวที่ 2</h4>
+                    <span style="color: #ff4d4f; font-weight: 600;"><i class="fa-solid fa-power-off"></i> หยุดทำงาน (OFF)</span>
+                </div>
+            </div>
         </div>
-        <div style="flex: 1; min-height: 300px; display: flex; align-items: center; justify-content: center; color: var(--color-ink-mute); border: 1px dashed var(--color-hairline-strong); border-radius: var(--rounded-md);">
-            [ Chart.js placeholder ]
+
+        <div class="sp-card" style="background-color: var(--color-canvas-soft);">
+            <div class="sp-card-header">
+                <h3 class="sp-card-title">4. สถานีเช็คปั๊มน้ำขาออก (2 ตัว)</h3>
+                <p style="font-size: 12px; color: var(--color-ink-mute);">ตรวจจับไฟด้วย AC 220V Optocoupler</p>
+            </div>
+            <div class="grid-2">
+                <div style="padding: 16px; background: var(--color-canvas); border-radius: var(--rounded-sm); border: 1px solid var(--color-hairline); text-align: center;">
+                    <h4 style="font-size: 14px; margin-bottom: 8px;">ปั๊มน้ำดีตัวที่ 1</h4>
+                    <span style="color: #ff4d4f; font-weight: 600;"><i class="fa-solid fa-power-off"></i> หยุดทำงาน (OFF)</span>
+                </div>
+                <div style="padding: 16px; background: var(--color-canvas); border-radius: var(--rounded-sm); border: 1px solid var(--color-hairline); text-align: center;">
+                    <h4 style="font-size: 14px; margin-bottom: 8px;">ปั๊มน้ำดีตัวที่ 2</h4>
+                    <span style="color: var(--color-primary); font-weight: 600;"><i class="fa-solid fa-bolt"></i> ทำงานอยู่ (ON)</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
