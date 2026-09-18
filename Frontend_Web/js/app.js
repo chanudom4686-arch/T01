@@ -30,6 +30,7 @@ const routes = {
     '/weather': { file: 'weather.html', title: 'สถานีอากาศ' },
     '/river': { file: 'river.html', title: 'ระดับน้ำคลอง' },
     '/tap-water': { file: 'tap_water.html', title: 'ระดับน้ำประปา' },
+    '/activity': { file: 'activity.html', title: 'บันทึกความเคลื่อนไหว' },
     '/devices': { file: 'devices.html', title: 'จัดการอุปกรณ์ IoT' },
     '/settings': { file: 'settings.html', title: 'ตั้งค่าระบบ' },
 };
