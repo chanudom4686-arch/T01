@@ -1,0 +1,88 @@
+<div class="sp-card" style="margin-bottom: 24px;">
+    <div class="sp-card-header">
+        <h3 class="sp-card-title"><i class="fa-solid fa-scale-balanced text-success"></i> ข้อมูลสมดุลน้ำ (Water Balance)</h3>
+    </div>
+    <div class="grid-2">
+        <!-- Inflow -->
+        <div style="background: var(--color-canvas-soft); padding: 16px; border-radius: var(--rounded-md); display: flex; align-items: center;">
+            <div style="background: rgba(13, 110, 253, 0.1); color: #0d6efd; padding: 16px; border-radius: 50%; margin-right: 16px;">
+                <i class="fa-solid fa-arrow-right-to-bracket fs-2"></i>
+            </div>
+            <div>
+                <h6 style="color: var(--color-ink-mute); margin-bottom: 4px; font-size: 14px;">ปริมาณน้ำเข้า (Inflow)</h6>
+                <h3 style="font-size: 24px; font-weight: 600; margin: 0;">12.5 <span style="font-size: 14px; font-weight: 400;">m³/s</span></h3>
+                <small style="color: var(--color-ink-mute);"><i class="fa-solid fa-calculator"></i> 1,080,000 m³/วัน</small>
+            </div>
+        </div>
+
+        <!-- Rainfall -->
+        <div style="background: var(--color-canvas-soft); padding: 16px; border-radius: var(--rounded-md); display: flex; align-items: center;">
+            <div style="background: rgba(13, 202, 240, 0.1); color: #0dcaf0; padding: 16px; border-radius: 50%; margin-right: 16px;">
+                <i class="fa-solid fa-cloud-showers-water fs-2"></i>
+            </div>
+            <div>
+                <h6 style="color: var(--color-ink-mute); margin-bottom: 4px; font-size: 14px;">ปริมาณฝน (Rainfall)</h6>
+                <h3 style="font-size: 24px; font-weight: 600; margin: 0;">15.6 <span style="font-size: 14px; font-weight: 400;">mm/วัน</span></h3>
+                <small style="color: var(--color-ink-mute);"><i class="fa-solid fa-calculator"></i> 3,120 m³/วัน</small>
+            </div>
+        </div>
+
+        <!-- Evaporation -->
+        <div style="background: var(--color-canvas-soft); padding: 16px; border-radius: var(--rounded-md); display: flex; align-items: center;">
+            <div style="background: rgba(255, 193, 7, 0.1); color: #ffc107; padding: 16px; border-radius: 50%; margin-right: 16px;">
+                <i class="fa-solid fa-temperature-arrow-up fs-2"></i>
+            </div>
+            <div>
+                <h6 style="color: var(--color-ink-mute); margin-bottom: 4px; font-size: 14px;">การระเหย (ETo)</h6>
+                <h3 style="font-size: 24px; font-weight: 600; margin: 0;">4.2 <span style="font-size: 14px; font-weight: 400;">mm/วัน</span></h3>
+                <small style="color: var(--color-ink-mute);"><i class="fa-solid fa-calculator"></i> 840 m³/วัน</small>
+            </div>
+        </div>
+
+        <!-- Outflow -->
+        <div style="background: var(--color-canvas-soft); padding: 16px; border-radius: var(--rounded-md); display: flex; align-items: center;">
+            <div style="background: rgba(108, 117, 125, 0.1); color: #6c757d; padding: 16px; border-radius: 50%; margin-right: 16px;">
+                <i class="fa-solid fa-arrow-right-from-bracket fs-2"></i>
+            </div>
+            <div>
+                <h6 style="color: var(--color-ink-mute); margin-bottom: 4px; font-size: 14px;">ปริมาณน้ำออก (Outflow)</h6>
+                <h3 style="font-size: 24px; font-weight: 600; margin: 0;">2.1 <span style="font-size: 14px; font-weight: 400;">m³/s</span></h3>
+                <small style="color: var(--color-ink-mute);"><i class="fa-solid fa-calculator"></i> 181,440 m³/วัน</small>
+            </div>
+        </div>
+
+        <!-- Pumped -->
+        <div style="background: var(--color-canvas-soft); padding: 16px; border-radius: var(--rounded-md); display: flex; align-items: center;">
+            <div style="background: rgba(33, 37, 41, 0.1); color: #212529; padding: 16px; border-radius: 50%; margin-right: 16px;">
+                <i class="fa-solid fa-faucet-drip fs-2"></i>
+            </div>
+            <div>
+                <h6 style="color: var(--color-ink-mute); margin-bottom: 4px; font-size: 14px;">สูบใช้ประปา (Pumped)</h6>
+                <h3 style="font-size: 24px; font-weight: 600; margin: 0;">500 <span style="font-size: 14px; font-weight: 400;">m³/วัน</span></h3>
+                <small style="color: var(--color-ink-mute);"><i class="fa-solid fa-calculator"></i> (500,000 ลิตร)</small>
+            </div>
+        </div>
+
+        <!-- Net Balance -->
+        <div style="background: var(--color-canvas-soft); padding: 16px; border-radius: var(--rounded-md); display: flex; align-items: center; border: 1px solid var(--color-primary);">
+            <div style="background: rgba(62, 207, 142, 0.1); color: var(--color-primary); padding: 16px; border-radius: 50%; margin-right: 16px;">
+                <i class="fa-solid fa-scale-balanced fs-2"></i>
+            </div>
+            <div>
+                <h6 style="color: var(--color-ink-mute); margin-bottom: 4px; font-size: 14px;">สมดุลน้ำ (Net Balance)</h6>
+                <h3 style="font-size: 24px; font-weight: 600; margin: 0; color: var(--color-primary);">900,340 <span style="font-size: 14px; font-weight: 400;">m³/วัน</span></h3>
+                <small style="color: var(--color-primary);"><i class="fa-solid fa-arrow-trend-up"></i> ปริมาตรน้ำในบ่อเพิ่มขึ้น</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sp-card">
+    <div class="sp-card-header">
+        <h3 class="sp-card-title"><i class="fa-solid fa-chart-line text-primary"></i> กราฟสมดุลน้ำแบบ Real-time</h3>
+    </div>
+    <div style="height: 300px; position: relative;">
+        <!-- Chart.js Canvas -->
+        <canvas id="waterBalanceChart"></canvas>
+    </div>
+</div>

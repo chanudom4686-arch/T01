@@ -26,11 +26,10 @@ document.querySelectorAll('.nav-link').forEach(link => {
 // --- SPA Router ---
 
 const routes = {
-    '/': { file: 'overview.html', title: 'ภาพรวมระบบ (Overview)' },
-    '/weather': { file: 'weather.html', title: 'สถานีอากาศ (Mode 4)' },
-    '/river': { file: 'river.html', title: 'ระดับน้ำคลอง (Mode 1)' },
-    '/tap-water': { file: 'tap_water.html', title: 'ระดับน้ำประปา (Mode 2)' },
-    '/water-balance': { file: 'water_balance.html', title: 'สมดุลน้ำบานประตู' },
+    '/': { file: 'water_balance_pond1.html', title: 'สมดุลน้ำ บ่อ 1' },
+    '/weather': { file: 'weather.html', title: 'สถานีอากาศ' },
+    '/river': { file: 'river.html', title: 'ระดับน้ำคลอง' },
+    '/tap-water': { file: 'tap_water.html', title: 'ระดับน้ำประปา' },
     '/devices': { file: 'devices.html', title: 'จัดการอุปกรณ์ IoT' },
     '/settings': { file: 'settings.html', title: 'ตั้งค่าระบบ' },
 };
@@ -101,6 +100,8 @@ function initViewLogic(path) {
         initWeatherChart();
     } else if (path === '/river') {
         initRiverChart();
+    } else if (path === '/') {
+        initWaterBalanceChart();
     }
     // Add other initializers as needed
 }
@@ -172,6 +173,63 @@ function initRiverChart() {
             scales: {
                 y: { grid: { color: '#ededed' } },
                 x: { grid: { display: false } }
+            }
+        }
+    });
+}
+
+function initWaterBalanceChart() {
+    const ctx = document.getElementById('waterBalanceChart');
+    if (!ctx) return;
+    
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['10:00', '10:05', '10:10', '10:15', '10:20', '10:25'],
+            datasets: [
+                {
+                    label: 'ได้น้ำ (m³/วัน)',
+                    data: [1100000, 1100500, 1090000, 1085000, 1083000, 1083120],
+                    borderColor: '#0dcaf0',
+                    backgroundColor: 'rgba(13, 202, 240, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'เสียน้ำ (m³/วัน)',
+                    data: [180000, 181000, 185000, 182000, 181500, 182280],
+                    borderColor: '#ff4d4f',
+                    backgroundColor: 'rgba(255, 77, 79, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'ปริมาตรน้ำในบ่อ (m³)',
+                    data: [800000, 850000, 900000, 950000, 900340, 900340],
+                    borderColor: '#3ecf8e',
+                    borderWidth: 3,
+                    borderDash: [5, 5],
+                    tension: 0.4,
+                    yAxisID: 'y1'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: { grid: { display: false } },
+                y: { 
+                    type: 'linear', display: true, position: 'left',
+                    title: { display: true, text: 'อัตราการไหล (m³/วัน)' }
+                },
+                y1: {
+                    type: 'linear', display: true, position: 'right',
+                    title: { display: true, text: 'ปริมาตรสะสม (m³)' },
+                    grid: { drawOnChartArea: false }
+                }
             }
         }
     });
